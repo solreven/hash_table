@@ -23,10 +23,13 @@ class HashTable:
             return
         
     def lookup(self, key) -> str:
-        pass
+        hashkey = self.hash(key)
+        if hashkey not in self.collection or key not in self.collection[hashkey]:
+            return None
+        else:
+            return self.collection[hashkey][key]
 
 
-'''Take a key as its argument and compute its hash.
-Confirm if the key exists in the collection.
-Remove the corresponding key-value pair from the hash table.
-If the key does not exist in the collection, it should not raise an error or remove anything.'''
+    '''Take a key as its argument.
+Compute the hash of the key, and return the corresponding value stored inside the hash table.
+If the key does not exist in the collection, it should return None.'''
