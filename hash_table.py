@@ -1,5 +1,3 @@
-'''The collection dictionary should store key-value pairs based on the hashed value of the key.'''
-
 class HashTable:
     def __init__(self):
         collection = {}
@@ -10,9 +8,15 @@ class HashTable:
         for letter in to_hash:
             hashed += ord(letter)
         return hashed
-    def add():
-        pass
+
+    def add(self, key: str, value: str):
+        hashkey = self.hash(key)
+        if hashkey not in self.collection:
+            self.collection[hashkey] = {}
+        self.collection[hashkey][key] = value
+
     def remove(self):
         pass
+        
     def lookup(self):
         pass
